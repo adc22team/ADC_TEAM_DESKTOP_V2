@@ -136,7 +136,8 @@ public class Form_Add_User extends javax.swing.JPanel {
 
         jComboBoxState.setBackground(new java.awt.Color(51, 51, 51));
         jComboBoxState.setForeground(new java.awt.Color(204, 204, 204));
-        jComboBoxState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1" }));
+        jComboBoxState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inactiu", "Actiu" }));
+        jComboBoxState.setSelectedIndex(1);
         jComboBoxState.setMaximumSize(new java.awt.Dimension(190, 24));
         jComboBoxState.setMinimumSize(new java.awt.Dimension(190, 24));
         jComboBoxState.setPreferredSize(new java.awt.Dimension(190, 24));

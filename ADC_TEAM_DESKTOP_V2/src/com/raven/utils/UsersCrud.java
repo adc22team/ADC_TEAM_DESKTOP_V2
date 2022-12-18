@@ -427,7 +427,7 @@ public class UsersCrud {
             //llegim la clau pública del servidor
             BigInteger shared_secret = SystemUtils.calculClauCompartida(in.readUTF(), claus_ps[1]);
             
-            //Executem la crida per donar d’alta un nou usuari
+            //Executem la crida per modificar l'usuari
             out.writeUTF(SystemUtils.encryptedText(id_conn + ",USER_MODIFI,"+ id_user + "," + user + "," + password + "," + name + "," + lastname + "," + department + "," + role + "," + state, shared_secret.toByteArray()));
             
             int resposta_modif = Integer.parseInt(SystemUtils.decryptedText(in.readUTF(), shared_secret.toByteArray()));

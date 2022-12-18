@@ -64,7 +64,7 @@ public class DeptCrud {
     public void listDept(JTable tableListUsers) {
 
         DefaultTableModel model = new DefaultTableModel();
-        id_conn =  UsuariConectat.id;
+        id_conn = UsuariConectat.id;
 
         Socket sc;
         try {

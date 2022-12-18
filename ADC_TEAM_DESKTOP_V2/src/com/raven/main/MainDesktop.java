@@ -10,6 +10,7 @@ import com.raven.event.EventMenuSelected;
 import com.raven.form.*;
 import com.raven.utils.DeptCrud;
 import com.raven.utils.RoleCrud;
+import com.raven.utils.Tickets;
 import com.raven.utils.UsersCrud;
 import java.awt.Color;
 import javax.swing.JComponent;
@@ -82,6 +83,7 @@ public class MainDesktop extends javax.swing.JFrame {
     UsersCrud uc = new UsersCrud();
     DeptCrud dc = new DeptCrud();
     RoleCrud rc = new RoleCrud();
+    Tickets tiq = new Tickets();
 
     /**
      * 
@@ -112,6 +114,7 @@ public class MainDesktop extends javax.swing.JFrame {
                     setForm(home);
                 } else if (index == 1) {
                     setForm(tiquets);
+                    tiq.listTickets(tiquets.table);
                 } else if (index == 2) {
                     setForm(estadistiques);
                 } else if (index == 3) {
