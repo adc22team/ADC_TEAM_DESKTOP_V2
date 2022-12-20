@@ -5,7 +5,11 @@
  */
 package com.raven.form;
 
+import com.raven.model.Model_Card;
+import com.raven.model.Model_Prioritat;
 import com.raven.swing.ScrollBar;
+import com.raven.utils.CountersTiquets;
+import com.raven.utils.Tickets;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -16,9 +20,9 @@ import javax.swing.JScrollPane;
  */
 public class Form_Tiquets extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Form_1
-     */
+    CountersTiquets countersTiquets = new CountersTiquets();
+    Tickets tickets = new Tickets();
+    
     public Form_Tiquets() {
         initComponents();
         
@@ -29,6 +33,11 @@ public class Form_Tiquets extends javax.swing.JPanel {
         JPanel p = new JPanel();
         p.setBackground(new Color(51, 51, 51));
         spTable.setCorner(JScrollPane.UPPER_RIGHT_CORNER, p);
+        
+        countersTiquets.allCounters();
+        
+        addCards();
+        addPrioritat();
     }
 
     /**
@@ -40,35 +49,96 @@ public class Form_Tiquets extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        panelBorder1 = new com.raven.swing.PanelBorder();
+        jButtonGrafiques = new javax.swing.JButton();
+        jButtonLlistat = new javax.swing.JButton();
+        panelBorderGrf = new com.raven.swing.PanelBorder();
+        jPanel1 = new javax.swing.JPanel();
+        prioritat1 = new com.raven.component.Prioritat();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        card1 = new com.raven.component.Card();
+        card2 = new com.raven.component.Card();
+        card3 = new com.raven.component.Card();
+        panelBorderList = new com.raven.swing.PanelBorder();
         spTable = new javax.swing.JScrollPane();
         table = new com.raven.swing.Table();
 
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
-        jButton1.setText("Grafiques");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonGrafiques.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonGrafiques.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonGrafiques.setForeground(new java.awt.Color(73, 181, 172));
+        jButtonGrafiques.setText("Grafiques");
+        jButtonGrafiques.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonGrafiquesActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("Llistat");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonLlistat.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonLlistat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButtonLlistat.setForeground(new java.awt.Color(73, 181, 172));
+        jButtonLlistat.setText("Llistat");
+        jButtonLlistat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonLlistatActionPerformed(evt);
             }
         });
 
-        panelBorder1.setBackground(new java.awt.Color(51, 51, 51));
+        panelBorderGrf.setBackground(new java.awt.Color(255, 204, 204));
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+
+        prioritat1.setColor1(new java.awt.Color(211, 184, 61));
+        prioritat1.setColor2(new java.awt.Color(73, 181, 172));
+
+        jLayeredPane1.setBackground(new java.awt.Color(255, 204, 204));
+        jLayeredPane1.setLayout(new java.awt.GridLayout(1, 0, 30, 0));
+
+        card1.setColor1(new java.awt.Color(211, 184, 61));
+        card1.setColor2(new java.awt.Color(73, 181, 172));
+        jLayeredPane1.add(card1);
+
+        card2.setColor1(new java.awt.Color(211, 184, 61));
+        card2.setColor2(new java.awt.Color(73, 181, 172));
+        jLayeredPane1.add(card2);
+
+        card3.setColor1(new java.awt.Color(211, 184, 61));
+        card3.setColor2(new java.awt.Color(73, 181, 172));
+        jLayeredPane1.add(card3);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(prioritat1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(prioritat1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(305, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panelBorderGrfLayout = new javax.swing.GroupLayout(panelBorderGrf);
+        panelBorderGrf.setLayout(panelBorderGrfLayout);
+        panelBorderGrfLayout.setHorizontalGroup(
+            panelBorderGrfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelBorderGrfLayout.setVerticalGroup(
+            panelBorderGrfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        panelBorderList.setBackground(new java.awt.Color(51, 51, 51));
 
         spTable.setBorder(null);
 
@@ -83,14 +153,14 @@ public class Form_Tiquets extends javax.swing.JPanel {
         ));
         spTable.setViewportView(table);
 
-        javax.swing.GroupLayout panelBorder1Layout = new javax.swing.GroupLayout(panelBorder1);
-        panelBorder1.setLayout(panelBorder1Layout);
-        panelBorder1Layout.setHorizontalGroup(
-            panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spTable, javax.swing.GroupLayout.DEFAULT_SIZE, 903, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelBorderListLayout = new javax.swing.GroupLayout(panelBorderList);
+        panelBorderList.setLayout(panelBorderListLayout);
+        panelBorderListLayout.setHorizontalGroup(
+            panelBorderListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(spTable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 903, Short.MAX_VALUE)
         );
-        panelBorder1Layout.setVerticalGroup(
-            panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelBorderListLayout.setVerticalGroup(
+            panelBorderListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(spTable, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
         );
 
@@ -101,41 +171,74 @@ public class Form_Tiquets extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelBorderList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(jButtonLlistat)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(jButtonGrafiques)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelBorderGrf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonGrafiques)
+                    .addComponent(jButtonLlistat))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelBorderList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(38, Short.MAX_VALUE)
+                    .addComponent(panelBorderGrf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        spTable.setVisible(false);
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButtonGrafiquesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGrafiquesActionPerformed
+//        spTable.setVisible(false);
+        panelBorderList.setVisible(false);
+        panelBorderGrf.setVisible(true);
+        countersTiquets.allCounters();
+    }//GEN-LAST:event_jButtonGrafiquesActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        spTable.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jButtonLlistatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLlistatActionPerformed
+//        spTable.setVisible(true);
+        panelBorderList.setVisible(true);
+        panelBorderGrf.setVisible(false);
+        tickets.refrescarTickets(table);
+    }//GEN-LAST:event_jButtonLlistatActionPerformed
 
+    public void addCards() {
+        card1.setData(new Model_Card("TOTAL", Integer.toString(countersTiquets.valorTotalTiq))); 
+        card2.setData(new Model_Card("EN RESOLUCIÓ", Integer.toString(countersTiquets.valorResolucioTiq)));
+        card3.setData(new Model_Card("RESOLTS", Integer.toString(countersTiquets.valorResoltTiq))); 
+    }
+    
+    public void addPrioritat() {
+        prioritat1.setData(new Model_Prioritat("TIQUETS PER PRIORITAT","BAIXA",Integer.toString(countersTiquets.valorPrioBaixa),
+                "MITJA",Integer.toString(countersTiquets.valorPrioMitja),"ALTA",Integer.toString(countersTiquets.valorPrioAlta),
+                "URGENT",Integer.toString(countersTiquets.valorPrioUrgent )));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private com.raven.swing.PanelBorder panelBorder1;
+    private com.raven.component.Card card1;
+    private com.raven.component.Card card2;
+    private com.raven.component.Card card3;
+    private javax.swing.JButton jButtonGrafiques;
+    private javax.swing.JButton jButtonLlistat;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private com.raven.swing.PanelBorder panelBorderGrf;
+    private com.raven.swing.PanelBorder panelBorderList;
+    private com.raven.component.Prioritat prioritat1;
     private javax.swing.JScrollPane spTable;
     public static com.raven.swing.Table table;
     // End of variables declaration//GEN-END:variables

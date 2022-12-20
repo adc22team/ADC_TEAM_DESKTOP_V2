@@ -9,7 +9,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.math.BigInteger;
 import java.net.Socket;
-import java.text.Normalizer;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
